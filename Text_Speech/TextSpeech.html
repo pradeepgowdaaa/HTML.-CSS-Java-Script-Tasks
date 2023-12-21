@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #txt{
+      background-image: radial-gradient(red,white,black);
+      color: blue;
+      text-size-adjust: 13;
+        }
+    </style>
+</head>
+<body>
+    <textarea name="" id="txt" cols="30" rows="10"></textarea><br>
+    <input type="number" id="range" value="range" min="1" max="5" step="0.5">
+   <input type="button" id="btn" value="play">
+</body>
+<script>
+    let txt=document.getElementById("txt")
+    let range=document.getElementById("range")
+    let play=document.getElementById("btn")
+
+    play.addEventListener("click",()=>{
+        max(txt.value)
+    })
+
+    function max(nan) {
+        let speech=new SpeechSynthesisUtterance(nan)
+        speechSynthesis.speak(speech)
+        speech.rate=range.value
+    }
+</script>
+</html>

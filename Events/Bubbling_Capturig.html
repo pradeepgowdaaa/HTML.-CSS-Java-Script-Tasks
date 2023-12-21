@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent {
+            height: 400px;
+            width: 350px;
+            border: 2px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        #child {
+            height: 300px;
+            width: 250px;
+            border: 2px solid aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #GrandChild {
+            height: 200px;
+            width: 150px;
+            border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">iam a parent
+        <div id="child">iam a child 
+            <div id="GrandChild">
+                iam a grand child
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var parent=document.querySelector("#parent")
+        var child=document.querySelector("#child")
+        var gc=document.querySelector("#GrandChild")
+
+        parent.addEventListener("click",(e)=>{
+          parent.style.backgroundColor="red"
+          console.log("iam a parent");
+        },true)
+
+
+        child.addEventListener("click",(e)=>{
+            e.stopPropagation();
+          child.style.backgroundColor="lawngreen"
+          console.log("iam a child");
+        },true)
+
+
+        gc.addEventListener("click",(e)=>{
+           
+         gc.style.backgroundColor="blue"
+          console.log("iam a gc");
+        },true)
+    </script>
+</body>
+
+</html>

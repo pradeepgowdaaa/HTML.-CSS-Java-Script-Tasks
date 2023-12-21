@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underwater Animation</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      animation: backgroundAnimation 30s linear infinite alternate;
+    }
+
+    @keyframes backgroundAnimation {
+      0% {
+        background: #1f78ff; /* Light blue for water */
+      }
+      100% {
+        background: #001f3f; /* Darker blue for deeper water */
+      }
+    }
+
+    .bubble {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #fff; /* White color for bubbles */
+      border-radius: 50%;
+      animation: bubbleRise 5s infinite;
+    }
+
+    @keyframes bubbleRise {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    .fish {
+      position: absolute;
+      width: 50px; /* Adjust the size of the fish */
+      height: 30px;
+      animation: fishSwim 10s linear infinite alternate;
+    }
+
+    @keyframes fishSwim {
+      0%, 100% {
+        transform: scaleX(-1); /* Flip the fish horizontally */
+        left: -50px; /* Start position outside the viewport */
+      }
+      50% {
+        left: 100vw; /* Move the fish across the viewport */
+      }
+    }
+
+    /* Add additional styling for your content here */
+
+  </style>
+</head>
+<body>
+  <!-- Fish and bubbles are added dynamically with JavaScript -->
+  <script>
+    const numBubbles = 50; // Adjust the number of bubbles
+    const numFish = 5; // Adjust the number of fish
+
+    for (let i = 0; i < numBubbles; i++) {
+      createBubble();
+    }
+
+    for (let i = 0; i < numFish; i++) {
+      createFish();
+    }
+
+    function createBubble() {
+      const bubble = document.createElement('div');
+      bubble.className = 'bubble';
+      bubble.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+      document.body.appendChild(bubble);
+    }
+
+    function createFish() {
+      const fish = document.createElement('div');
+      fish.className = 'fish';
+      fish.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+      fish.style.top = `${Math.random() * 80 + 10}vh`; // Random vertical position
+      fish.style.backgroundImage = `url('path/to/fish-image.png')`; // Replace with your fish image path
+      document.body.appendChild(fish);
+    }
+  </script>
+
+  <!-- Your content goes here -->
+</body>
+</html>

@@ -1,0 +1,42 @@
+.main{
+    border: 10px solid black;
+    height: 75px;
+    width: 2000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.menu{
+    /* border: 6px solid red; */
+     font-weight:bolder ;
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.logo{
+    /* border:6px solid blueviolet; */
+    height: 100px;
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.login{
+    /* border: 6px solid greenyellow; */
+    text-decoration: none;
+    font-weight: bold;
+    height: 100px;
+    width: 800px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.logo>img{
+    height: 70px;
+    width: 200px;
+}

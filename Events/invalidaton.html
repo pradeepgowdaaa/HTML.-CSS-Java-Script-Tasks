@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Style>
+        #out{
+            height: 40px;
+            width: 90px;
+            background-color: aqua;
+        }
+       input{
+        height: 40px;
+        width: 100px;
+        font-size: xx-large;
+       }
+    </Style>
+</head>
+<body>
+    
+    <input type="button" id="btn1" value="click">
+    <input type="text" id="inp1">
+    <input type="button" id="btn2" value="validated">
+    <div id="out"></div>
+    <script>
+
+
+var btn1=document.querySelector("#btn1")
+var inp1=document.querySelector("#inp1")
+var btn=document.querySelector("#btn2")
+var ans=document.querySelector("#out")
+
+btn1.addEventListener("click",()=>{
+   let otp=(Math.floor(Math.random()*1000000))
+   alert(otp);
+})
+btn2.addEventListener("click",()=>{
+    var data=parseInt(inp1.value)
+    if (data==otp) {
+ans.innerText="VALID OTP"
+    
+}
+else{
+    ans.innerText="INVALID OTP"
+}
+})
+  
+    </script>
+</body>
+</html>
