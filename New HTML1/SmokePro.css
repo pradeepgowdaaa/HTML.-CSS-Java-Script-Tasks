@@ -33,7 +33,7 @@ h2::before{
     white-space: nowrap;
     border-right: 2px solid #fff;
     animation: anim 3s linear infinite;
-    filter: drop-shadow(0 0 5px #fff) 
+    filter: drop-shadow(10 0 5px #fff) 
     drop-shadow(0 0 10px #fff);
     background: linear-gradient(Orange,white,green);
     text-shadow: 20deg,20deg,20deg,20degC;
